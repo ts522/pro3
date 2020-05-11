@@ -1,0 +1,8 @@
+listmain: listmain.o list.o   # Meaning: target listmain depends of listmain.o list.o  
+	gcc -o listmain listmain.o list.o  # Command to make the target
+
+listmain.o: listmain.c list.c      # Meaning: target listmain.o depends on listmain.c list.c
+	gcc -c listmain.c list.c        # Command to make the target
+
+list.o: list.c   list.h #target list.o depends on list.c and indirectly on list.h	
+	gcc -c list.c
